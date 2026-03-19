@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navaja Suiza de Productividad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo">ProductivityApp</div>
+        <nav>
+            <button class="nav-btn active" data-target="view-calendar">Calendario</button>
+            <button class="nav-btn" data-target="view-eisenhower">Matriz</button>
+            <button class="nav-btn" data-target="view-kanban">Kanban</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        
+        <section id="view-calendar" class="view-section active">
+            <h2>📅 Planificación Semanal</h2>
+            <p>Aquí construiremos la grilla horaria dinámica con drag & drop.</p>
+            <div class="calendar-grid-placeholder">
+                </div>
+        </section>
+
+        <section id="view-eisenhower" class="view-section hidden">
+            <h2>🗂️ Matriz de Eisenhower (Backlog)</h2>
+            <div class="eisenhower-grid">
+                <div class="quadrant q1" id="q-urgent-important">Urgente & Importante</div>
+                <div class="quadrant q2" id="q-noturgent-important">No Urgente & Importante</div>
+                <div class="quadrant q3" id="q-urgent-notimportant">Urgente & No Importante</div>
+                <div class="quadrant q4" id="q-noturgent-notimportant">No Urgente & No Importante</div>
+            </div>
+        </section>
+
+        <section id="view-kanban" class="view-section hidden">
+            <h2>📋 Tablero Kanban</h2>
+            <div class="kanban-board">
+                <div class="kanban-column" id="k-todo">Por Hacer</div>
+                <div class="kanban-column" id="k-doing">En Progreso</div>
+                <div class="kanban-column" id="k-done">Completado</div>
+            </div>
+        </section>
+
+    </main>
+
+    <aside id="pomodoro-widget" class="floating-widget">
+        <div class="pomodoro-header">🍅 Pomodoro</div>
+        <div class="pomodoro-timer">25:00</div>
+        <button id="btn-pomodoro-toggle">Iniciar</button>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>
